@@ -1,4 +1,4 @@
-package com.gramexa.dto;
+package com.gramexa.model;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

@@ -1,7 +1,10 @@
 package com.gramexa.service;
 
-import com.gramexa.dto.RegisterRequest;
+import com.gramexa.config.JwtUtil;
+import com.gramexa.model.LoginResponse;
+import com.gramexa.model.RegisterRequest;
 import com.gramexa.entity.User;
+import com.gramexa.exception.CustomException;
 import com.gramexa.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -18,16 +21,19 @@ public class UserService {
   @Autowired
   private PasswordEncoder passwordEncoder;
 
+  @Autowired
+  private JwtUtil jwtUtil;
+
   public String register(RegisterRequest request) {
 
     // Check email duplicate
     if (userRepository.existsByEmail(request.getEmail())) {
-      throw new RuntimeException("Email already registered");
+      throw new CustomException("Email already registered");
     }
 
     // Check mobile duplicate
     if (userRepository.existsByMobileNumber(request.getMobileNumber())) {
-      throw new RuntimeException("Mobile number already registered");
+      throw new CustomException("Mobile number already registered");
     }
 
     // Map DTO → Entity
@@ -36,15 +42,33 @@ public class UserService {
     user.setEmail(request.getEmail());
     user.setMobileNumber(request.getMobileNumber());
 
-    // 🔐 Encrypt password
+    // Encrypt password
     user.setPassword(passwordEncoder.encode(request.getPassword()));
 
     user.setRole("USER");
     user.setCreatedAt(LocalDateTime.now());
 
-    // 💾 Save to DB
+    // Save to DB
     userRepository.save(user);
 
     return "User registered successfully";
+  }
+
+
+  public LoginResponse login(String username , String password) {
+    User user = userRepository.findByEmailOrMobileNumber(username , username)
+            .orElseThrow(() -> new CustomException("User not found"));
+
+    if (!passwordEncoder.matches(password, user.getPassword())) {
+      throw new CustomException("Invalid password");
+    }
+
+    String token = jwtUtil.generateToken(user);
+
+    return new LoginResponse(
+            token,
+            user.getName(),
+            user.getMobileNumber()
+    );
   }
 }

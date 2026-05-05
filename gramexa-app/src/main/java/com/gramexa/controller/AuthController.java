@@ -1,6 +1,8 @@
 package com.gramexa.controller;
 
-import com.gramexa.dto.RegisterRequest;
+import com.gramexa.model.LoginRequest;
+import com.gramexa.model.LoginResponse;
+import com.gramexa.model.RegisterRequest;
 import com.gramexa.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +23,13 @@ public class AuthController {
     String response = userService.register(request);
 
     return ResponseEntity.ok(response);
+  }
+
+  @PostMapping("/login")
+  public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest request) {
+
+    return ResponseEntity.ok(
+            userService.login(request.getUsername(), request.getPassword())
+    );
   }
 }
