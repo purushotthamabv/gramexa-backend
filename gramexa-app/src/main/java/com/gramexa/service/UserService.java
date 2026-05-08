@@ -55,20 +55,39 @@ public class UserService {
   }
 
 
-  public LoginResponse login(String username , String password) {
-    User user = userRepository.findByEmailOrMobileNumber(username , username)
-            .orElseThrow(() -> new CustomException("User not found"));
+  public LoginResponse login(String username, String password) {
 
-    if (!passwordEncoder.matches(password, user.getPassword())) {
+    User user = userRepository
+            .findByEmailOrMobileNumber(username, username)
+            .orElseThrow(() ->
+                    new CustomException("User not found"));
+
+    // Password check
+    if (!passwordEncoder.matches(
+            password,
+            user.getPassword()
+    )) {
+
       throw new CustomException("Invalid password");
     }
 
+    // ADMIN APPROVAL CHECK
+    if ("ADMIN".equals(user.getRole())
+            && !user.isApproved()) {
+
+      throw new CustomException(
+              "Admin approval pending"
+      );
+    }
+
+    // Generate JWT
     String token = jwtUtil.generateToken(user);
 
     return new LoginResponse(
             token,
             user.getName(),
-            user.getMobileNumber()
+            user.getMobileNumber(),
+            user.getRole()
     );
   }
 }

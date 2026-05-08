@@ -23,6 +23,8 @@ public class User {
 
   private String role;
 
+  private boolean approved = false;
+
   private LocalDateTime createdAt;
 
   // getters & setters
@@ -54,6 +56,14 @@ public class User {
 
   public String getRole() { return role; }
   public void setRole(String role) { this.role = role; }
+
+  public boolean isApproved() {
+    return approved;
+  }
+
+  public void setApproved(boolean approved) {
+    this.approved = approved;
+  }
 
   public LocalDateTime getCreatedAt() { return createdAt; }
   public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
