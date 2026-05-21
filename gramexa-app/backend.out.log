@@ -1,0 +1,212 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.gramexa:gramexa-app:jar:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.mysql:mysql-connector-j:jar -> duplicate declaration of version (?) @ line 98, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ----------------------< com.gramexa:gramexa-app >-----------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:4.0.6:run (default-cli) > test-compile @ gramexa-app >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ gramexa-app ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ gramexa-app ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ gramexa-app ---
+[INFO] skip non existing resourceDirectory D:\gramexa\gramexa-backend\gramexa-app\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ gramexa-app ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:4.0.6:run (default-cli) < test-compile @ gramexa-app <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:4.0.6:run (default-cli) @ gramexa-app ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.6)
+
+2026-05-21T11:57:36.772+05:30  INFO 17288 --- [gramexa-app] [           main] com.gramexa.GramexaAppApplication        : Starting GramexaAppApplication using Java 17.0.19 with PID 17288 (D:\gramexa\gramexa-backend\gramexa-app\target\classes started by Admin in D:\gramexa\gramexa-backend\gramexa-app)
+2026-05-21T11:57:36.812+05:30  INFO 17288 --- [gramexa-app] [           main] com.gramexa.GramexaAppApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-05-21T11:57:44.702+05:30  INFO 17288 --- [gramexa-app] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-21T11:57:45.123+05:30  INFO 17288 --- [gramexa-app] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 366 ms. Found 4 JPA repository interfaces.
+2026-05-21T11:57:51.939+05:30  INFO 17288 --- [gramexa-app] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-05-21T11:57:52.135+05:30  INFO 17288 --- [gramexa-app] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-21T11:57:52.138+05:30  INFO 17288 --- [gramexa-app] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-21T11:57:53.469+05:30  INFO 17288 --- [gramexa-app] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 15830 ms
+2026-05-21T11:57:55.095+05:30  INFO 17288 --- [gramexa-app] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-21T11:57:55.787+05:30  INFO 17288 --- [gramexa-app] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-21T11:58:00.887+05:30  INFO 17288 --- [gramexa-app] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-21T11:58:01.182+05:30  INFO 17288 --- [gramexa-app] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-21T11:58:05.496+05:30  INFO 17288 --- [gramexa-app] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4d4c4b14
+2026-05-21T11:58:05.514+05:30  INFO 17288 --- [gramexa-app] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-21T11:58:06.242+05:30  WARN 17288 --- [gramexa-app] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-21T11:58:06.612+05:30  INFO 17288 --- [gramexa-app] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/gramexa_db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: gramexa_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-21T11:58:23.752+05:30  INFO 17288 --- [gramexa-app] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-21T11:58:25.401+05:30  INFO 17288 --- [gramexa-app] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-21T11:58:26.259+05:30  INFO 17288 --- [gramexa-app] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-21T11:58:29.528+05:30  WARN 17288 --- [gramexa-app] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-21T11:58:29.794+05:30  INFO 17288 --- [gramexa-app] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-05-21T11:58:31.140+05:30  INFO 17288 --- [gramexa-app] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-05-21T11:58:31.164+05:30  INFO 17288 --- [gramexa-app] [           main] com.gramexa.GramexaAppApplication        : Started GramexaAppApplication in 59.254 seconds (process running for 62.771)
+Hibernate: select p1_0.id from products p1_0 where p1_0.product_name=? limit ?
+Hibernate: select p1_0.id from products p1_0 where p1_0.product_name=? limit ?
+Hibernate: select p1_0.id from products p1_0 where p1_0.product_name=? limit ?
+Hibernate: select p1_0.id from products p1_0 where p1_0.product_name=? limit ?
+Hibernate: select p1_0.id from products p1_0 where p1_0.product_name=? limit ?
+2026-05-21T11:59:49.060+05:30  INFO 17288 --- [gramexa-app] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-21T11:59:49.061+05:30  INFO 17288 --- [gramexa-app] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-21T11:59:49.064+05:30  INFO 17288 --- [gramexa-app] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select count(wi1_0.id) from wishlist_items wi1_0 where wi1_0.user_id=?
+Hibernate: select count(ci1_0.id) from cart_items ci1_0 where ci1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select count(wi1_0.id) from wishlist_items wi1_0 where wi1_0.user_id=?
+Hibernate: select count(ci1_0.id) from cart_items ci1_0 where ci1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0 where p1_0.id=?
+Hibernate: select ci1_0.id,ci1_0.created_at,ci1_0.product_id,ci1_0.quantity,ci1_0.updated_at,ci1_0.user_id from cart_items ci1_0 where ci1_0.user_id=? and ci1_0.product_id=?
+Hibernate: insert into cart_items (created_at,product_id,quantity,updated_at,user_id) values (?,?,?,?,?)
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select count(ci1_0.id) from cart_items ci1_0 where ci1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select count(wi1_0.id) from wishlist_items wi1_0 where wi1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0
+Hibernate: select count(wi1_0.id) from wishlist_items wi1_0 where wi1_0.user_id=?
+Hibernate: select count(ci1_0.id) from cart_items ci1_0 where ci1_0.user_id=?
+Hibernate: select wi1_0.id,wi1_0.created_at,wi1_0.product_id,wi1_0.user_id from wishlist_items wi1_0 where wi1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select count(ci1_0.id) from cart_items ci1_0 where ci1_0.user_id=?
+Hibernate: select count(wi1_0.id) from wishlist_items wi1_0 where wi1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0 where p1_0.id=?
+Hibernate: select ci1_0.id,ci1_0.created_at,ci1_0.product_id,ci1_0.quantity,ci1_0.updated_at,ci1_0.user_id from cart_items ci1_0 where ci1_0.user_id=? and ci1_0.product_id=?
+Hibernate: update cart_items set created_at=?,product_id=?,quantity=?,updated_at=?,user_id=? where id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select count(wi1_0.id) from wishlist_items wi1_0 where wi1_0.user_id=?
+Hibernate: select count(ci1_0.id) from cart_items ci1_0 where ci1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0 where p1_0.id=?
+Hibernate: select ci1_0.id,ci1_0.created_at,ci1_0.product_id,ci1_0.quantity,ci1_0.updated_at,ci1_0.user_id from cart_items ci1_0 where ci1_0.user_id=? and ci1_0.product_id=?
+Hibernate: update cart_items set created_at=?,product_id=?,quantity=?,updated_at=?,user_id=? where id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select count(ci1_0.id) from cart_items ci1_0 where ci1_0.user_id=?
+Hibernate: select count(wi1_0.id) from wishlist_items wi1_0 where wi1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0 where p1_0.id=?
+Hibernate: select ci1_0.id,ci1_0.created_at,ci1_0.product_id,ci1_0.quantity,ci1_0.updated_at,ci1_0.user_id from cart_items ci1_0 where ci1_0.user_id=? and ci1_0.product_id=?
+Hibernate: update cart_items set created_at=?,product_id=?,quantity=?,updated_at=?,user_id=? where id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select count(wi1_0.id) from wishlist_items wi1_0 where wi1_0.user_id=?
+Hibernate: select count(ci1_0.id) from cart_items ci1_0 where ci1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0 where p1_0.id=?
+Hibernate: select ci1_0.id,ci1_0.created_at,ci1_0.product_id,ci1_0.quantity,ci1_0.updated_at,ci1_0.user_id from cart_items ci1_0 where ci1_0.user_id=? and ci1_0.product_id=?
+Hibernate: update cart_items set created_at=?,product_id=?,quantity=?,updated_at=?,user_id=? where id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select count(wi1_0.id) from wishlist_items wi1_0 where wi1_0.user_id=?
+Hibernate: select count(ci1_0.id) from cart_items ci1_0 where ci1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0 where p1_0.id=?
+Hibernate: select ci1_0.id,ci1_0.created_at,ci1_0.product_id,ci1_0.quantity,ci1_0.updated_at,ci1_0.user_id from cart_items ci1_0 where ci1_0.user_id=? and ci1_0.product_id=?
+Hibernate: update cart_items set created_at=?,product_id=?,quantity=?,updated_at=?,user_id=? where id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select count(ci1_0.id) from cart_items ci1_0 where ci1_0.user_id=?
+Hibernate: select count(wi1_0.id) from wishlist_items wi1_0 where wi1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select count(ci1_0.id) from cart_items ci1_0 where ci1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select count(wi1_0.id) from wishlist_items wi1_0 where wi1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select count(wi1_0.id) from wishlist_items wi1_0 where wi1_0.user_id=?
+Hibernate: select u1_0.id,u1_0.approved,u1_0.created_at,u1_0.email,u1_0.mobile_number,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select count(ci1_0.id) from cart_items ci1_0 where ci1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0
+2026-05-21T12:33:43.643+05:30  WARN 17288 --- [gramexa-app] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m7s413ms899µs400ns).
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0
+2026-05-21T12:54:20.020+05:30  WARN 17288 --- [gramexa-app] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m36s2ms683µs400ns).
+Hibernate: select p1_0.id,p1_0.created_at,p1_0.delivery_available,p1_0.featured,p1_0.offer_price,p1_0.product_brand,p1_0.product_category,p1_0.product_description,p1_0.product_image,p1_0.product_image_url,p1_0.product_name,p1_0.product_price,p1_0.product_status,p1_0.product_unit,p1_0.stock_quantity,p1_0.updated_at from products p1_0
+2026-05-21T14:15:21.422+05:30  WARN 17288 --- [gramexa-app] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h1s103ms626µs300ns).

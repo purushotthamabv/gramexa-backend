@@ -69,6 +69,9 @@ public class ProductsService {
       existingProduct.setProductImage(
               updatedProduct.getProductImage());
 
+      existingProduct.setProductImageUrl(
+              updatedProduct.getProductImageUrl());
+
       existingProduct.setProductStatus(
               updatedProduct.getProductStatus());
 

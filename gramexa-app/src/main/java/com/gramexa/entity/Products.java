@@ -33,6 +33,8 @@ public class Products {
   @Column(columnDefinition = "LONGBLOB")
   private byte[] productImage;
 
+  private String productImageUrl;
+
   private String productStatus;
 
   private Boolean featured;
@@ -146,6 +148,14 @@ public class Products {
 
   public void setProductImage(byte[] productImage) {
     this.productImage = productImage;
+  }
+
+  public String getProductImageUrl() {
+    return productImageUrl;
+  }
+
+  public void setProductImageUrl(String productImageUrl) {
+    this.productImageUrl = productImageUrl;
   }
 
   public String getProductStatus() {
