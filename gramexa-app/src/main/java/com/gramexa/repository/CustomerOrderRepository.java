@@ -9,4 +9,5 @@ import java.util.List;
 public interface CustomerOrderRepository extends JpaRepository<CustomerOrder, Long> {
 
   List<CustomerOrder> findByUserOrderByCreatedAtDesc(User user);
+  void deleteByUser(User user);
 }

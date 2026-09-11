@@ -79,21 +79,37 @@ if ($env:MVNW_REPOURL) {
 $distributionUrlName = $distributionUrl -replace '^.*/',''
 $distributionUrlNameMain = $distributionUrlName -replace '\.[^.]*$','' -replace '-bin$',''
 
-$MAVEN_M2_PATH = "$HOME/.m2"
+$MAVEN_M2_PATH = $null
 if ($env:MAVEN_USER_HOME) {
-  $MAVEN_M2_PATH = "$env:MAVEN_USER_HOME"
+  $MAVEN_M2_PATH = $env:MAVEN_USER_HOME
+} elseif ($env:USERPROFILE) {
+  $MAVEN_M2_PATH = Join-Path $env:USERPROFILE ".m2"
+} elseif ($HOME) {
+  $MAVEN_M2_PATH = Join-Path $HOME ".m2"
+} else {
+  $MAVEN_M2_PATH = Join-Path $scriptDir ".m2"
 }
 
 if (-not (Test-Path -Path $MAVEN_M2_PATH)) {
-    New-Item -Path $MAVEN_M2_PATH -ItemType Directory | Out-Null
+  New-Item -Path $MAVEN_M2_PATH -ItemType Directory -Force | Out-Null
 }
 
-$MAVEN_WRAPPER_DISTS = $null
-if ((Get-Item $MAVEN_M2_PATH).Target[0] -eq $null) {
-  $MAVEN_WRAPPER_DISTS = "$MAVEN_M2_PATH/wrapper/dists"
-} else {
-  $MAVEN_WRAPPER_DISTS = (Get-Item $MAVEN_M2_PATH).Target[0] + "/wrapper/dists"
+$MAVEN_REPO_LOCAL = Join-Path $MAVEN_M2_PATH "repository"
+if (-not (Test-Path -Path $MAVEN_REPO_LOCAL)) {
+  New-Item -Path $MAVEN_REPO_LOCAL -ItemType Directory -Force | Out-Null
 }
+
+if ($env:MAVEN_OPTS) {
+  $env:MAVEN_OPTS = "$env:MAVEN_OPTS -Dmaven.repo.local=$MAVEN_REPO_LOCAL"
+} else {
+  $env:MAVEN_OPTS = "-Dmaven.repo.local=$MAVEN_REPO_LOCAL"
+}
+
+if ($env:USERPROFILE) {
+  $env:HOME = $env:USERPROFILE
+}
+
+$MAVEN_WRAPPER_DISTS = Join-Path $MAVEN_M2_PATH "wrapper/dists"
 
 $MAVEN_HOME_PARENT = "$MAVEN_WRAPPER_DISTS/$distributionUrlNameMain"
 $MAVEN_HOME_NAME = ([System.Security.Cryptography.SHA256]::Create().ComputeHash([byte[]][char[]]$distributionUrl) | ForEach-Object {$_.ToString("x2")}) -join ''

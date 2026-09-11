@@ -18,10 +18,7 @@ public class SuperAdminService {
   // GET PENDING ADMINS
   public List<User> getPendingAdmins() {
 
-    return userRepository.findByRoleAndApproved(
-            "ADMIN",
-            false
-    );
+    return userRepository.findByAdminRequestPendingTrue();
   }
 
   // APPROVE ADMIN
@@ -35,23 +32,18 @@ public class SuperAdminService {
             );
 
     // CHECK ROLE
-    if (!"ADMIN".equals(user.getRole())) {
+    if (!user.isAdminRequestPending()) {
 
       throw new CustomException(
-              "User is not an admin"
+              "No pending admin request found"
       );
     }
 
     // ALREADY APPROVED CHECK
-    if (user.isApproved()) {
-
-      throw new CustomException(
-              "Admin already approved"
-      );
-    }
-
-    // APPROVE
+    // Approve the pending request, even if approved was set inconsistently.
     user.setApproved(true);
+    user.setRole("ADMIN");
+    user.setAdminRequestPending(false);
 
     userRepository.save(user);
 

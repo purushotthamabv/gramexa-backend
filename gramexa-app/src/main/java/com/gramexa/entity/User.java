@@ -24,6 +24,7 @@ public class User {
   private String role;
 
   private boolean approved = false;
+  private boolean adminRequestPending = false;
 
   private LocalDateTime createdAt;
 
@@ -64,6 +65,9 @@ public class User {
   public void setApproved(boolean approved) {
     this.approved = approved;
   }
+
+  public boolean isAdminRequestPending() { return adminRequestPending; }
+  public void setAdminRequestPending(boolean pending) { this.adminRequestPending = pending; }
 
   public LocalDateTime getCreatedAt() { return createdAt; }
   public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }

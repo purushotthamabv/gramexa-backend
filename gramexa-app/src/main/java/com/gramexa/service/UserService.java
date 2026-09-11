@@ -2,6 +2,7 @@ package com.gramexa.service;
 
 import com.gramexa.config.JwtUtil;
 import com.gramexa.model.ChangePasswordRequest;
+import com.gramexa.model.ForgotPasswordRequest;
 import com.gramexa.model.LoginResponse;
 import com.gramexa.model.RegisterRequest;
 import com.gramexa.entity.User;
@@ -75,12 +76,13 @@ public class UserService {
     }
 
     // ADMIN APPROVAL CHECK
-    if ("ADMIN".equals(user.getRole())
-            && !user.isApproved()) {
-
-      throw new CustomException(
-              "Admin approval pending"
-      );
+    if ("ADMIN".equalsIgnoreCase(user.getRole()) && !user.isApproved()) {
+      // Migrate accounts created by the previous request flow. They remain
+      // normal users until a Super Admin approves the request.
+      user.setRole("USER");
+      user.setAdminRequestPending(true);
+      user.setApproved(true);
+      userRepository.save(user);
     }
 
     // Generate JWT
@@ -133,6 +135,27 @@ public class UserService {
     userRepository.save(user);
 
     return "Password changed successfully";
+  }
+
+  public String forgotPassword(ForgotPasswordRequest request) {
+    User user = userRepository
+            .findByEmailOrMobileNumber(request.getUsername(), request.getUsername())
+            .orElseThrow(() -> new CustomException("User not found"));
+
+    user.setPassword(passwordEncoder.encode(request.getNewPassword()));
+    userRepository.save(user);
+
+    return "Password reset successfully";
+  }
+
+  public String requestAdminAccess(String email) {
+    User user = getUserByEmail(email);
+    if ("SUPER_ADMIN".equals(user.getRole())) return "You already have Super Admin access";
+    if ("ADMIN".equals(user.getRole()) && user.isApproved()) return "You already have Admin access";
+    if (user.isAdminRequestPending()) return "Admin access request is already pending";
+    user.setAdminRequestPending(true);
+    userRepository.save(user);
+    return "Admin access request submitted";
   }
 
   private User getUserByEmail(String email) {

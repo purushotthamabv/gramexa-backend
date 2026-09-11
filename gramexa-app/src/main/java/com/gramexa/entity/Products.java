@@ -11,6 +11,9 @@ public class Products {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
+  @Column(unique = true)
+  private String productId;
+
   private String productName;
 
   private String productCategory;
@@ -76,6 +79,14 @@ public class Products {
 
   public void setId(Long id) {
     this.id = id;
+  }
+
+  public String getProductId() {
+    return productId;
+  }
+
+  public void setProductId(String productId) {
+    this.productId = productId;
   }
 
   public String getProductName() {

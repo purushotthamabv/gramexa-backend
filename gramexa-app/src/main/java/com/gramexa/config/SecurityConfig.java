@@ -89,12 +89,22 @@ public class SecurityConfig {
                     .requestMatchers("/api/auth/**")
                     .permitAll()
 
-                    .requestMatchers("/api/products/all-products", "/api/products/{id}")
+                    .requestMatchers("/api/products/all-products", "/api/products/{id}", "/api/restaurants/**")
                     .permitAll()
 
                     // ONLY SUPER ADMIN
                     .requestMatchers("/api/super-admin/**")
                     .hasRole("SUPER_ADMIN")
+
+                    .requestMatchers("/api/admin/**")
+                    .hasAnyRole("ADMIN", "SUPER_ADMIN")
+
+                    .requestMatchers(HttpMethod.POST, "/api/products/add-product")
+                    .hasAnyRole("ADMIN", "SUPER_ADMIN")
+                    .requestMatchers(HttpMethod.PUT, "/api/products/update/**")
+                    .hasAnyRole("ADMIN", "SUPER_ADMIN")
+                    .requestMatchers(HttpMethod.DELETE, "/api/products/delete/**")
+                    .hasAnyRole("ADMIN", "SUPER_ADMIN")
 
                     // LOGIN REQUIRED
                     .anyRequest()

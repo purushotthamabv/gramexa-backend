@@ -1,6 +1,7 @@
 package com.gramexa.controller;
 
 import com.gramexa.model.ChangePasswordRequest;
+import com.gramexa.model.ForgotPasswordRequest;
 import com.gramexa.model.LoginRequest;
 import com.gramexa.model.LoginResponse;
 import com.gramexa.model.RegisterRequest;
@@ -65,5 +66,18 @@ public class AuthController {
     return ResponseEntity.ok(
             userService.changePassword(authentication.getName(), request)
     );
+  }
+
+  @PostMapping("/forgot-password")
+  public ResponseEntity<String> forgotPassword(@Valid @RequestBody ForgotPasswordRequest request) {
+
+    return ResponseEntity.ok(
+            userService.forgotPassword(request)
+    );
+  }
+
+  @PostMapping("/request-admin")
+  public ResponseEntity<String> requestAdmin(Authentication authentication) {
+    return ResponseEntity.ok(userService.requestAdminAccess(authentication.getName()));
   }
 }

@@ -2,6 +2,7 @@ package com.gramexa.controller;
 
 import com.gramexa.entity.User;
 import com.gramexa.service.SuperAdminService;
+import com.gramexa.model.AdminUserResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,9 +18,10 @@ public class SuperAdminController {
 
   // GET PENDING ADMINS
   @GetMapping("/pending-admins")
-  public List<User> getPendingAdmins() {
-
-    return superAdminService.getPendingAdmins();
+  public List<AdminUserResponse> getPendingAdmins() {
+    return superAdminService.getPendingAdmins().stream()
+            .map(u -> new AdminUserResponse(u.getId(), u.getName(), u.getEmail(), u.getMobileNumber(), u.getRole(), u.isApproved(), u.getCreatedAt()))
+            .toList();
   }
 
   // APPROVE ADMIN

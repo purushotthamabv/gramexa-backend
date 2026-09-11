@@ -26,4 +26,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
           String role,
           boolean approved
   );
+  List<User> findByAdminRequestPendingTrue();
 }
